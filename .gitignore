@@ -1,0 +1,13 @@
+# loose files of no real point since we post releases elsewhere
+*.lnk
+*.pk3
+*.bak
+*.pk7
+*.7z
+
+# folders with big bulky things that shouldn't go on git like psd files
+/artsrc/*
+/txtsrc/*
+
+# text files i use to write down everything i do. pointless to include when commit logs exist
+/fancyworld-dev/diary.txt

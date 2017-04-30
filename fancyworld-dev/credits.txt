@@ -1,0 +1,6 @@
+Id Software (...for everything.)
+
+Nintendo (Slime bubble sprites)
+Epic Games (Slime sounds)
+Valve (Some water sounds)
+Gutawer (ZScript core of Fancy World system)

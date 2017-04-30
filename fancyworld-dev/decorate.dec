@@ -1,0 +1,16 @@
+/*
+----------------------------
+FANCY WORLD
+Actor Definitions
+Index
+----------------------------
+*/
+
+actor Boolean: Inventory
+{
+    Inventory.MaxAmount 1
+    +UNDROPPABLE
+    -INVBAR
+}
+
+#include "actors/world/flats.dec"
