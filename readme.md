@@ -6,7 +6,7 @@ This is the development repo - the versions you find here will be unstable and h
 
 Stable Releases and Actual Info
 -------------------------------
-[Right here](http://www.thekinsie.com/metadoom/), champ.
+[Right here](https://forum.zdoom.org/viewtopic.php?f=46&t=56139), champ.
 
 How to Build
 ------------
