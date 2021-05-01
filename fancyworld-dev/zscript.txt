@@ -118,17 +118,20 @@ Class SpawnEnvActorHandler : EventHandler
 				*/
 
 				// Plutonia Waterfall
-				string WallWaterfall[8];
-				WallWaterfall[0] = "WFALL1";
-				WallWaterfall[1] = "WFALL2";
-				WallWaterfall[2] = "WFALL3";
-				WallWaterfall[3] = "WFALL4";
-				// for WADSMOOSH
-				WallWaterfall[4] = "PWFALL1";
-				WallWaterfall[5] = "PWFALL2";
-				WallWaterfall[6] = "PWFALL3";
-				WallWaterfall[7] = "PWFALL4";
-				for (int i = 0; i < 8; i++)
+				string WallWaterfall[] =
+				{
+					"WFALL1",
+					"WFALL2",
+					"WFALL3",
+					"WFALL4",
+					// for WADSMOOSH
+					"PWFALL1",
+					"PWFALL2",
+					"PWFALL3",
+					"PWFALL4"
+				};
+
+				for (int i = 0; i < WallWaterfall.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallWaterfall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallWaterfall", (spawnCoords,(spamc - 32)));
@@ -139,12 +142,15 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Bloodfall
-				string WallBloodfall[4];
-				WallBloodfall[0] = "BFALL1";
-				WallBloodfall[1] = "BFALL2";
-				WallBloodfall[2] = "BFALL3";
-				WallBloodfall[3] = "BFALL4";
-				for (int i = 0; i < 4; i++)
+				string WallBloodfall[] =
+				{
+					"BFALL1",
+					"BFALL2",
+					"BFALL3",
+					"BFALL4"
+				};
+
+				for (int i = 0; i < WallBloodfall.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallBloodfall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallBloodfall", (spawnCoords,(spamc - 32)));
@@ -155,12 +161,15 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Doom 2 Slimefall
-				string WallSlimefall[4];
-				WallSlimefall[0] = "SFALL1";
-				WallSlimefall[1] = "SFALL2";
-				WallSlimefall[2] = "SFALL3";
-				WallSlimefall[3] = "SFALL4";
-				for (int i = 0; i < 4; i++)
+				string WallSlimefall[] =
+				{
+					"SFALL1",
+					"SFALL2",
+					"SFALL3",
+					"SFALL4"
+				};
+
+				for (int i = 0; i < WallSlimefall.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallSlimefall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallSlimefall", (spawnCoords,(spamc - 32)));
@@ -171,22 +180,25 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Lavafalls
-				string WallLavafall[12];
-				// ObAddon Lavafall. Probably other lavafalls, too...
-				WallLavafall[0] = "LFALL1";
-				WallLavafall[1] = "LFALL2";
-				WallLavafall[2] = "LFALL3";
-				WallLavafall[3] = "LFALL4";
-				WallLavafall[4] = "LFAL21";
-				WallLavafall[5] = "LFAL22";
-				WallLavafall[6] = "LFAL23";
-				WallLavafall[7] = "LFAL24";
-				// CC4 Tex
-				WallLavafall[8] = "LAVFALL1";
-				WallLavafall[9] = "LAVFALL2";
-				WallLavafall[10] = "LAVFALL3";
-				WallLavafall[11] = "LAVFALL4";
-				for (int i = 0; i < 12; i++)
+				string WallLavafall[] =
+				{
+					// ObAddon Lavafall. Probably other lavafalls, too...
+					"LFALL1",
+					"LFALL2",
+					"LFALL3",
+					"LFALL4",
+					"LFAL21",
+					"LFAL22",
+					"LFAL23",
+					"LFAL24",
+					// CC4 Tex
+					"LAVFALL1",
+					"LAVFALL2",
+					"LAVFALL3",
+					"LAVFALL4"
+				};
+
+				for (int i = 0; i < WallLavafall.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallLavafall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallLavafall", (spawnCoords,(spamc - 32)));
@@ -198,11 +210,14 @@ Class SpawnEnvActorHandler : EventHandler
 
 
 				// Doom 1 Slimedrip
-				string WallSlimedrip[3];
-				WallSlimedrip[0] = "SLADRIP1";
-				WallSlimedrip[1] = "SLADRIP2";
-				WallSlimedrip[2] = "SLADRIP3";
-				for (int i = 0; i < 3; i++)
+				string WallSlimedrip[] =
+				{
+					"SLADRIP1",
+					"SLADRIP2",
+					"SLADRIP3"
+				};
+
+				for (int i = 0; i < WallSlimedrip.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallSlimedrip[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallSlimedrip", (spawnCoords,(spamc - 32)));
@@ -213,11 +228,14 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Gargoyle Blood Fountain
-				string WallGargfont[3];
-				WallGargfont[0] = "GSTFONT1";
-				WallGargfont[1] = "GSTFONT2";
-				WallGargfont[2] = "GSTFONT3";
-				for (int i = 0; i < 3; i++)
+				string WallGargfont[] =
+				{
+					"GSTFONT1",
+					"GSTFONT2",
+					"GSTFONT3"
+				};
+
+				for (int i = 0; i < WallGargfont.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallGargfont[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallGargfont", (spawnCoords,(spamc - 32)));
@@ -228,16 +246,19 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Compstation
-				string WallCompstation[7];
-				WallCompstation[0] = "COMPSTA1";
-				WallCompstation[1] = "COMPSTA2";
-				// CC4 Tex
-				WallCompstation[2] = "COMPSTA3";
-				WallCompstation[3] = "COMPSTA4";
-				WallCompstation[4] = "COMPSTA5";
-				WallCompstation[5] = "COMPSTA6";
-				WallCompstation[6] = "COMPTALR";
-				for (int i = 0; i < 7; i++)
+				string WallCompstation[] =
+				{
+					"COMPSTA1",
+					"COMPSTA2",
+					// CC4 Tex
+					"COMPSTA3",
+					"COMPSTA4",
+					"COMPSTA5",
+					"COMPSTA6",
+					"COMPTALR"
+				};
+
+				for (int i = 0; i < WallCompstation.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallCompstation[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallCompstation", (spawnCoords,(spamc - 32)));
@@ -245,13 +266,16 @@ Class SpawnEnvActorHandler : EventHandler
 					Actor.Spawn("FancyWallCompstation", (spawnCoords,(spamc - (spamf * 0.5))));
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.bottom) == TexMan.CheckForTexture(WallCompstation[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallCompstation", (spawnCoords,spamf));
-				}
+				};
 
 				// Fireblu
-				string WallFireblu[2];
-				WallFireblu[0] = "FIREBLU1";
-				WallFireblu[1] = "FIREBLU2";
-				for (int i = 0; i < 2; i++)
+				string WallFireblu[] =
+				{
+					"FIREBLU1",
+					"FIREBLU2"
+				};
+
+				for (int i = 0; i < WallFireblu.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallFireblu[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallFireblu", (spawnCoords,(spamc - 32)));
@@ -262,17 +286,20 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Firey Walls
-				string WallFirewall[9];
-				WallFirewall[0] = "FIREMAG1";
-				WallFirewall[1] = "FIREMAG2";
-				WallFirewall[2] = "FIREMAG3";
-				WallFirewall[3] = "FIREWALL";
-				WallFirewall[4] = "FIREWALA";
-				WallFirewall[5] = "FIREWALB";
-				WallFirewall[6] = "FIRELAVA";
-				WallFirewall[7] = "FIRELAV2";
-				WallFirewall[8] = "FIRELAV3";
-				for (int i = 0; i < 9; i++)
+				string WallFirewall[] =
+				{
+					"FIREMAG1",
+					"FIREMAG2",
+					"FIREMAG3",
+					"FIREWALL",
+					"FIREWALA",
+					"FIREWALB",
+					"FIRELAVA",
+					"FIRELAV2",
+					"FIRELAV3"
+				};
+
+				for (int i = 0; i < WallFirewall.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallFirewall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallFirewall", (spawnCoords,(spamc - 32)));
@@ -283,18 +310,21 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Generic Hummy Tech
-				string WallTechhum[9];
-				WallTechhum[0] = "COMPTALL";
-				WallTechhum[1] = "COMP2";
-				WallTechhum[2] = "SPACEW3";
-				WallTechhum[3] = "COMPUTE1";
-				WallTechhum[4] = "PLANET1";
-				// CC4 Tex
-				WallTechhum[5] = "COMPUTE4";
-				WallTechhum[6] = "COMPUTE7";
-				WallTechhum[7] = "COMPUTE8";
-				WallTechhum[8] = "COMPUTE9";
-				for (int i = 0; i < 9; i++)
+				string WallTechhum[] =
+				{
+					"COMPTALL",
+					"COMP2",
+					"SPACEW3",
+					"COMPUTE1",
+					"PLANET1",
+					// CC4 Tex
+					"COMPUTE4",
+					"COMPUTE7",
+					"COMPUTE8",
+					"COMPUTE9"
+				};
+
+				for (int i = 0; i < WallTechhum.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallTechhum[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallTechhum", (spawnCoords,(spamc - 32)));
@@ -305,26 +335,29 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// Wall-Based Lighting
-				string WallLights[18];
-				WallLights[0] = "LITE3";
-				WallLights[1] = "LITE5";
-				WallLights[2] = "LITEBLU1";
-				WallLights[3] = "LITEBLU4";
-				WallLights[4] = "BRICKLIT";
-				WallLights[5] = "BSTONE3";
-				WallLights[6] = "LITE2";
-				WallLights[7] = "LITE96";
-				WallLights[8] = "LITEMET";
-				WallLights[9] = "LITERED";
-				WallLights[10] = "LITESTON";
-				WallLights[11] = "LITE4";
-				WallLights[12] = "LITEGRN1";
-				WallLights[13] = "LITERED1";
-				WallLights[14] = "LITERED2";
-				WallLights[15] = "LITEYEL1";
-				WallLights[16] = "LITEYEL2";
-				WallLights[17] = "LITEYEL3";
-				for (int i = 0; i < 18; i++)
+				string WallLights[] =
+				{
+					"LITE3",
+					"LITE5",
+					"LITEBLU1",
+					"LITEBLU4",
+					"BRICKLIT",
+					"BSTONE3",
+					"LITE2",
+					"LITE96",
+					"LITEMET",
+					"LITERED",
+					"LITESTON",
+					"LITE4",
+					"LITEGRN1",
+					"LITERED1",
+					"LITERED2",
+					"LITEYEL1",
+					"LITEYEL2",
+					"LITEYEL3"
+				};
+
+				for (int i = 0; i < WallLights.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallLights[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallLights", (spawnCoords,(spamc - 32)));
@@ -335,12 +368,15 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 
 				// CCTEX4/ObAddon Static Monitor
-				string WallStatic[4];
-				WallStatic[0] = "COMPFUZ1";
-				WallStatic[1] = "COMPFUZ2";
-				WallStatic[2] = "COMPFUZ3";
-				WallStatic[3] = "COMPFUZ4";
-				for (int i = 0; i < 4; i++)
+				string WallStatic[] =
+				{
+					"COMPFUZ1",
+					"COMPFUZ2",
+					"COMPFUZ3",
+					"COMPFUZ4"
+				};
+
+				for (int i = 0; i < WallStatic.Size()-1; i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallStatic[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallStatic", (spawnCoords,(spamc - 32)));
@@ -386,13 +422,15 @@ class FancyEnvActorFloor : Actor
 			// this is marginally less dumb than last time
 
 			// Nukage
-			string FloorNukage[4];
-			FloorNukage[0] = "NUKAGE1";
-			FloorNukage[1] = "NUKAGE2";
-			FloorNukage[2] = "NUKAGE3";
-			FloorNukage[3] = "NUKAGE4";
+			string FloorNukage[] =
+			{					
+				"NUKAGE1",
+				"NUKAGE2",
+				"NUKAGE3",
+				"NUKAGE4"
+			};
 
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < FloorNukage.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorNukage[i], TexMan.Type_Any))
 				{
@@ -405,50 +443,59 @@ class FancyEnvActorFloor : Actor
 			}
 
 			// Water
-			string FloorWater[4];
-			FloorWater[0] = "FWATER1";
-			FloorWater[1] = "FWATER2";
-			FloorWater[2] = "FWATER3";
-			FloorWater[3] = "FWATER4";
-			for (int i = 0; i < 4; i++)
+			string FloorWater[] =
+			{
+				"FWATER1",
+				"FWATER2",
+				"FWATER3",
+				"FWATER4"
+			};
+
+			for (int i = 0; i < FloorWater.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorWater[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorWaterCore");
 			}
 
 			// Slime
-			string FloorSlime[12];
-			FloorSlime[0] = "SLIME01";
-			FloorSlime[1] = "SLIME02";
-			FloorSlime[2] = "SLIME03";
-			FloorSlime[3] = "SLIME04";
-			FloorSlime[4] = "SLIME05";
-			FloorSlime[5] = "SLIME06";
-			FloorSlime[6] = "SLIME07";
-			FloorSlime[7] = "SLIME08";
+			string FloorSlime[] =
+			{
+			FloorSlime[0] = "SLIME01",
+			FloorSlime[1] = "SLIME02",
+			FloorSlime[2] = "SLIME03",
+			FloorSlime[3] = "SLIME04",
+			FloorSlime[4] = "SLIME05",
+			FloorSlime[5] = "SLIME06",
+			FloorSlime[6] = "SLIME07",
+			FloorSlime[7] = "SLIME08",
 			// ObAddon black oil sludge
-			FloorSlime[8] = "SLUDGE01";
-			FloorSlime[9] = "SLUDGE02";
-			FloorSlime[10] = "SLUDGE03";
-			FloorSlime[11] = "SLUDGE04";
-			for (int i = 0; i < 12; i++)
+			FloorSlime[8] = "SLUDGE01",
+			FloorSlime[9] = "SLUDGE02",
+			FloorSlime[10] = "SLUDGE03",
+			FloorSlime[11] = "SLUDGE04"
+			};
+
+			for (int i = 0; i < FloorSlime.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorSlime[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorSlimeCore");
 			}
 
 			// Lava
-			string FloorLava[8];
-			FloorLava[0] = "LAVA1";
-			FloorLava[1] = "LAVA2";
-			FloorLava[2] = "LAVA3";
-			FloorLava[3] = "LAVA4";
-			// ObAddon Quake Lava
-			FloorLava[4] = "QLAVA1";
-			FloorLava[5] = "QLAVA2";
-			FloorLava[6] = "QLAVA3";
-			FloorLava[7] = "QLAVA4";
-			for (int i = 0; i < 8; i++)
+			string FloorLava[] =
+			{
+				"LAVA1",
+				"LAVA2",
+				"LAVA3",
+				"LAVA4",
+				// ObAddon Quake Lava
+				"QLAVA1",
+				"QLAVA2",
+				"QLAVA3",
+				"QLAVA4"
+			};
+
+			for (int i = 0; i < FloorLava.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorLava[i], TexMan.Type_Any))
 				{
@@ -462,36 +509,45 @@ class FancyEnvActorFloor : Actor
 			}
 
 			// Blood
-			string FloorBlood[4];
-			FloorBlood[0] = "BLOOD1";
-			FloorBlood[1] = "BLOOD2";
-			FloorBlood[2] = "BLOOD3";
-			FloorBlood[3] = "BLOOD4";
-			for (int i = 0; i < 4; i++)
+			string FloorBlood[] =
+			{
+				"BLOOD1",
+				"BLOOD2",
+				"BLOOD3",
+				"BLOOD4"
+			};
+
+			for (int i = 0; i < FloorBlood.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorBlood[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorSlimeCore");
 			}
 
 			// Hot
-			string FloorHot[4];
-			FloorHot[0] = "SLIME09";
-			FloorHot[1] = "SLIME10";
-			FloorHot[2] = "SLIME11";
-			FloorHot[3] = "SLIME12";
-			for (int i = 0; i < 4; i++)
+			string FloorHot[] =
+			{
+				"SLIME09",
+				"SLIME10",
+				"SLIME11",
+				"SLIME12"
+			};
+
+			for (int i = 0; i < FloorHot.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorHot[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorHotCore");
 			}
 
 			// XWATER from ObAddon
-			string FloorXWater[4];
-			FloorXWater[0] = "XWATER1";
-			FloorXWater[1] = "XWATER2";
-			FloorXWater[2] = "XWATER3";
-			FloorXWater[3] = "XWATER4";
-			for (int i = 0; i < 4; i++)
+			string FloorXWater[] =
+			{
+				"XWATER1",
+				"XWATER2",
+				"XWATER3",
+				"XWATER4"
+			};
+
+			for (int i = 0; i < FloorXWater.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorXWater[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorXWaterCore");
@@ -525,19 +581,21 @@ class FancyEnvActorFloorOldWay : Actor
 		TNT1 A 0
 		{
 			// Floor Teleporter
-			string FloorTeleporter[10];
-			FloorTeleporter[0] = "GATE1";
-			FloorTeleporter[1] = "GATE2";
-			FloorTeleporter[2] = "GATE3";
-			FloorTeleporter[3] = "GATE4";
-			// CC4 Tex
-			FloorTeleporter[4] = "GATE3TN";
-			FloorTeleporter[5] = "GATE4BL";
-			FloorTeleporter[6] = "GATE4GN";
-			FloorTeleporter[7] = "GATE4OR";
-			FloorTeleporter[8] = "GATE4RD";
-			FloorTeleporter[9] = "GATE4YL";
-			for (int i = 0; i < 10; i++)
+			string FloorTeleporter[] =
+			{
+				"GATE1",
+				"GATE2",
+				"GATE3",
+				"GATE4",
+				// CC4 Tex
+				"GATE3TN",
+				"GATE4BL",
+				"GATE4GN",
+				"GATE4OR",
+				"GATE4RD",
+				"GATE4YL"
+			};
+			for (int i = 0; i < FloorTeleporter.Size()-1; i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorTeleporter[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorTeleporterCore");
@@ -575,17 +633,20 @@ class FancyEnvActorCeiling : Actor
 				A_SpawnItem("FancySectorSky");
 
 			// Generic Ceiling Lights
-			string CeilingLights[10];
-			CeilingLights[0] = "CEIL1_2";
-			CeilingLights[1] = "CEIL1_3";
-			CeilingLights[2] = "CEIL3_6";
-			CeilingLights[3] = "FLAT2";
-			CeilingLights[4] = "FLAT17";
-			CeilingLights[5] = "GRNLITE1";
-			CeilingLights[6] = "TLITE6_1";
-			CeilingLights[7] = "TLITE6_4";
-			CeilingLights[8] = "TLITE6_5";
-			CeilingLights[9] = "TLITE6_6";
+			string CeilingLights[] =
+			{
+				"CEIL1_2",
+				"CEIL1_3",
+				"CEIL3_6",
+				"FLAT2",
+				"FLAT17",
+				"GRNLITE1",
+				"TLITE6_1",
+				"TLITE6_4",
+				"TLITE6_5",
+				"TLITE6_6"
+			};
+			
 			for (int i = 0; i < 10; i++)
 			{
 				if (ceilingpic == TexMan.CheckForTexture(CeilingLights[i], TexMan.Type_Any))
