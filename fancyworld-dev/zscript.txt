@@ -180,7 +180,12 @@ Class SpawnEnvActorHandler : EventHandler
 					"BFALL1",
 					"BFALL2",
 					"BFALL3",
-					"BFALL4"
+					"BFALL4",
+					// Obsidian
+					"BFAL1",
+					"BFAL2",
+					"BFAL3",
+					"BFAL4"
 				};
 
 				for (int i = 0; i < WallBloodfall.Size(); i++)
@@ -201,7 +206,23 @@ Class SpawnEnvActorHandler : EventHandler
 					"SFALL3",
 					"SFALL4",
 					// OBSIDIAN
-					"GREEN02"
+					"GREEN02",
+					"GRYFALL1",
+					"GRYFALL2",
+					"GRYFALL3",
+					"GRYFALL4",
+					"OFALL1",
+					"OFALL2",
+					"OFALL3",
+					"OFALL4",
+					"SLMFALL1",
+					"SLMFALL2",
+					"SLMFALL3",
+					"SLMFALL4",
+					"PURFAL1",
+					"PURFAL2",
+					"PURFAL3",
+					"PURFAL4"
 				};
 
 				for (int i = 0; i < WallSlimefall.Size(); i++)
@@ -230,7 +251,20 @@ Class SpawnEnvActorHandler : EventHandler
 					"LAVFALL1",
 					"LAVFALL2",
 					"LAVFALL3",
-					"LAVFALL4"
+					"LAVFALL4",
+					// Obsidian
+					"LFALL1",
+					"LFALL2",
+					"LFALL3",
+					"LFALL4",
+					"LFAL21",
+					"LFAL22",
+					"LFAL23",
+					"LFAL24",
+					"MFALL1",
+					"MFALL2",
+					"MFALL3",
+					"MFALL4"
 				};
 
 				for (int i = 0; i < WallLavafall.Size(); i++)
@@ -419,6 +453,18 @@ Class SpawnEnvActorHandler : EventHandler
 					"TVSNOW01",
 					"TVSNOW02",
 					"TVSNOW03",
+					"NOISE1",
+					"NOISE2",
+					"NOISE3",
+					"NOISE4",
+					"NOISE2A",
+					"NOISE2B",
+					"NOISE2C",
+					"NOISE2D",
+					"NOISE3A",
+					"NOISE3B",
+					"NOISE3C",
+					"NOISE3D",
 					// OBSIDIAN, may move to own sound later
 					"DECMP04A",
 					"DECMP04B",
@@ -521,7 +567,10 @@ class FancyEnvActorFloor : Actor
 				"FWATER1",
 				"FWATER2",
 				"FWATER3",
-				"FWATER4"
+				"FWATER4",
+				// OBSIDIAN Purple water - maybe move later
+				"PURW1",
+				"PURW2"
 			};
 
 			for (int i = 0; i < FloorWater.Size(); i++)
@@ -568,7 +617,14 @@ class FancyEnvActorFloor : Actor
 				"QLAVA1",
 				"QLAVA2",
 				"QLAVA3",
-				"QLAVA4"
+				"QLAVA4",
+				// Other OBSIDIAN Lava shit
+				"MAGMA1",
+				"MAGMA2",
+				"MAGMA3",
+				"MAGMA4",
+				"XLAV1",
+				"XLAV2"
 			};
 
 			for (int i = 0; i < FloorLava.Size(); i++)
