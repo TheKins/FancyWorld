@@ -44,9 +44,7 @@ class FancySectorNukage : FancyWorldBase
 				&& floorpic != TexMan.CheckForTexture("NUKAGE3", TexMan.Type_Any)
 				&& floorpic != TexMan.CheckForTexture("NUKAGE4", TexMan.Type_Any))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			NUBL A 0 A_PlaySound("world/acid", CHAN_VOICE);
@@ -129,6 +127,20 @@ class FancySectorLava : FancyWorldBase
 			TNT1 A 0 A_SpawnItem("LavaSmoke");
 			goto Croak;
 		Croak:
+			NUBL A 0
+			{
+				if (floorpic != TexMan.CheckForTexture("LAVA1", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("LAVA2", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("LAVA3", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("LAVA4", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("QLAVA1", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("QLAVA2", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("QLAVA3", TexMan.Type_Any)
+				&& floorpic != TexMan.CheckForTexture("QLAVA4", TexMan.Type_Any))
+				{
+					Destroy();
+				}
+			}
 			NUBL A 0 A_PlaySound("world/lava");
 			LABL ABCDE 4;
 			goto Spawn;
