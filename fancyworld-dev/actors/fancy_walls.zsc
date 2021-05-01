@@ -1,18 +1,6 @@
 // Test Actor
 class FancyWallTestSound : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -36,18 +24,6 @@ class FancyWallTestSound : FancyWorldBase
 // Plutonia Waterfalls
 class FancyWallWaterfall : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -71,18 +47,6 @@ class FancyWallWaterfall : FancyWorldBase
 // Bloodfalls
 class FancyWallBloodfall : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -106,18 +70,6 @@ class FancyWallBloodfall : FancyWorldBase
 // Doom 2 Slimefalls
 class FancyWallSlimefall : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -141,18 +93,6 @@ class FancyWallSlimefall : FancyWorldBase
 // ObAddon (and prob. others) Lavafalls
 class FancyWallLavafall : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -176,18 +116,6 @@ class FancyWallLavafall : FancyWorldBase
 // Doom 1 slime dripping out of a drain
 class FancyWallSlimedrip : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -211,18 +139,6 @@ class FancyWallSlimedrip : FancyWorldBase
 // Gargoyle-head blood fountain
 class FancyWallGargfont : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -246,18 +162,6 @@ class FancyWallGargfont : FancyWorldBase
 // COMPSTA Wall Computers
 class FancyWallCompstation : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -281,18 +185,6 @@ class FancyWallCompstation : FancyWorldBase
 // Flaming Walls
 class FancyWallFirewall : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -316,18 +208,6 @@ class FancyWallFirewall : FancyWorldBase
 // The Battler-Prince
 class FancyWallFireblu : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -351,18 +231,6 @@ class FancyWallFireblu : FancyWorldBase
 // Creepy Faces on the Wall
 class FancyWallFaces : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -386,18 +254,6 @@ class FancyWallFaces : FancyWorldBase
 // Tech Humming
 class FancyWallTechhum : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -421,18 +277,6 @@ class FancyWallTechhum : FancyWorldBase
 // Lights on the Wall
 class FancyWallLights : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
@@ -456,18 +300,6 @@ class FancyWallLights : FancyWorldBase
 // Static Monitor
 class FancyWallStatic : FancyWorldBase
 {
-	Default
-	{
-		-SOLID
-		-NOCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOINTERACTION
-		+MOVEWITHSECTOR
-		radius 1;
-		height 1;
-		RenderStyle "None";
-	}
 	states
 	{
 		Spawn:
