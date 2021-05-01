@@ -14,6 +14,7 @@ Class SpawnEnvActorHandler : EventHandler
 		SpawnFloorActors();
 		SpawnFloorActors_OldWay();
 		SpawnCeilingActors();
+		SpawnSkyActors();
 		SpawnWallActors();
 	}
 
@@ -59,8 +60,7 @@ Class SpawnEnvActorHandler : EventHandler
 		}
     }
 
-	// Spawn Stuff on the ceiling. Same method as with SpawnFloorActors, just at
-	// a larger grid size for the sake of performance.
+	// Spawn Stuff on the ceiling. Same method as with SpawnFloorActors.
 	void SpawnCeilingActors()
     {
         //32704
@@ -85,6 +85,35 @@ Class SpawnEnvActorHandler : EventHandler
 			}
 			spamx = -32448;
 			spamy -= 256;
+		}
+    }
+	
+	// Spawn Stuff on the ceiling. Same method as with SpawnFloorActors, just at
+	// a larger grid size for the sake of performance.
+	void SpawnSkyActors()
+    {
+        //32704
+		int spamx = -32448;
+		int spamy = 32448;
+		int spamz = 0;
+
+		Vector2 spam2 = (spamx, spamy);
+		Vector3 spam3 = (spamx, spamy, spamz);
+
+		while (spamy > -32448)
+		{
+			while (spamx < 32448)
+			{
+				spamz = Sector.pointInSector((spamx, spamy)).floorplane.zAtPoint((spamx, spamy));
+				if (level.IsPointInMap(spam3))
+				{
+					Actor.Spawn("FancyEnvActorSky", (spamx, spamy, spamz));
+				}
+				spamx += 1024;
+				spam3 = (spamx, spamy, spamz);
+			}
+			spamx = -32448;
+			spamy -= 1024;
 		}
     }
 
@@ -131,7 +160,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"PWFALL4"
 				};
 
-				for (int i = 0; i < WallWaterfall.Size()-1; i++)
+				for (int i = 0; i < WallWaterfall.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallWaterfall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallWaterfall", (spawnCoords,(spamc - 32)));
@@ -150,7 +179,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"BFALL4"
 				};
 
-				for (int i = 0; i < WallBloodfall.Size()-1; i++)
+				for (int i = 0; i < WallBloodfall.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallBloodfall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallBloodfall", (spawnCoords,(spamc - 32)));
@@ -169,7 +198,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"SFALL4"
 				};
 
-				for (int i = 0; i < WallSlimefall.Size()-1; i++)
+				for (int i = 0; i < WallSlimefall.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallSlimefall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallSlimefall", (spawnCoords,(spamc - 32)));
@@ -198,7 +227,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"LAVFALL4"
 				};
 
-				for (int i = 0; i < WallLavafall.Size()-1; i++)
+				for (int i = 0; i < WallLavafall.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallLavafall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallLavafall", (spawnCoords,(spamc - 32)));
@@ -217,7 +246,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"SLADRIP3"
 				};
 
-				for (int i = 0; i < WallSlimedrip.Size()-1; i++)
+				for (int i = 0; i < WallSlimedrip.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallSlimedrip[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallSlimedrip", (spawnCoords,(spamc - 32)));
@@ -235,7 +264,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"GSTFONT3"
 				};
 
-				for (int i = 0; i < WallGargfont.Size()-1; i++)
+				for (int i = 0; i < WallGargfont.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallGargfont[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallGargfont", (spawnCoords,(spamc - 32)));
@@ -258,7 +287,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"COMPTALR"
 				};
 
-				for (int i = 0; i < WallCompstation.Size()-1; i++)
+				for (int i = 0; i < WallCompstation.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallCompstation[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallCompstation", (spawnCoords,(spamc - 32)));
@@ -275,7 +304,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"FIREBLU2"
 				};
 
-				for (int i = 0; i < WallFireblu.Size()-1; i++)
+				for (int i = 0; i < WallFireblu.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallFireblu[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallFireblu", (spawnCoords,(spamc - 32)));
@@ -299,7 +328,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"FIRELAV3"
 				};
 
-				for (int i = 0; i < WallFirewall.Size()-1; i++)
+				for (int i = 0; i < WallFirewall.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallFirewall[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallFirewall", (spawnCoords,(spamc - 32)));
@@ -324,7 +353,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"COMPUTE9"
 				};
 
-				for (int i = 0; i < WallTechhum.Size()-1; i++)
+				for (int i = 0; i < WallTechhum.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallTechhum[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallTechhum", (spawnCoords,(spamc - 32)));
@@ -357,7 +386,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"LITEYEL3"
 				};
 
-				for (int i = 0; i < WallLights.Size()-1; i++)
+				for (int i = 0; i < WallLights.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallLights[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallLights", (spawnCoords,(spamc - 32)));
@@ -376,7 +405,7 @@ Class SpawnEnvActorHandler : EventHandler
 					"COMPFUZ4"
 				};
 
-				for (int i = 0; i < WallStatic.Size()-1; i++)
+				for (int i = 0; i < WallStatic.Size(); i++)
 				{
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallStatic[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallStatic", (spawnCoords,(spamc - 32)));
@@ -430,7 +459,7 @@ class FancyEnvActorFloor : Actor
 				"NUKAGE4"
 			};
 
-			for (int i = 0; i < FloorNukage.Size()-1; i++)
+			for (int i = 0; i < FloorNukage.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorNukage[i], TexMan.Type_Any))
 				{
@@ -451,7 +480,7 @@ class FancyEnvActorFloor : Actor
 				"FWATER4"
 			};
 
-			for (int i = 0; i < FloorWater.Size()-1; i++)
+			for (int i = 0; i < FloorWater.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorWater[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorWaterCore");
@@ -475,7 +504,7 @@ class FancyEnvActorFloor : Actor
 			FloorSlime[11] = "SLUDGE04"
 			};
 
-			for (int i = 0; i < FloorSlime.Size()-1; i++)
+			for (int i = 0; i < FloorSlime.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorSlime[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorSlimeCore");
@@ -495,7 +524,7 @@ class FancyEnvActorFloor : Actor
 				"QLAVA4"
 			};
 
-			for (int i = 0; i < FloorLava.Size()-1; i++)
+			for (int i = 0; i < FloorLava.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorLava[i], TexMan.Type_Any))
 				{
@@ -517,7 +546,7 @@ class FancyEnvActorFloor : Actor
 				"BLOOD4"
 			};
 
-			for (int i = 0; i < FloorBlood.Size()-1; i++)
+			for (int i = 0; i < FloorBlood.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorBlood[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorSlimeCore");
@@ -532,7 +561,7 @@ class FancyEnvActorFloor : Actor
 				"SLIME12"
 			};
 
-			for (int i = 0; i < FloorHot.Size()-1; i++)
+			for (int i = 0; i < FloorHot.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorHot[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorHotCore");
@@ -547,7 +576,7 @@ class FancyEnvActorFloor : Actor
 				"XWATER4"
 			};
 
-			for (int i = 0; i < FloorXWater.Size()-1; i++)
+			for (int i = 0; i < FloorXWater.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorXWater[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorXWaterCore");
@@ -595,7 +624,7 @@ class FancyEnvActorFloorOldWay : Actor
 				"GATE4RD",
 				"GATE4YL"
 			};
-			for (int i = 0; i < FloorTeleporter.Size()-1; i++)
+			for (int i = 0; i < FloorTeleporter.Size(); i++)
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorTeleporter[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorTeleporterCore");
@@ -605,6 +634,36 @@ class FancyEnvActorFloorOldWay : Actor
 	Remove:
 		TNT1 A 0;
 		stop;
+	}
+}
+
+class FancyEnvActorSky : Actor
+{
+	Default
+	{
+		-SOLID
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOCLIP
+		+NOBLOCKMAP
+		RenderStyle "None";
+		radius 1;
+		height 1;
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0
+		{
+			// back to the dumb ways
+			if (ceilingpic == TexMan.CheckForTexture("F_SKY1", TexMan.Type_Any))
+			{
+				A_SpawnItem("FancySectorSky");
+			}
+		}
+		Stop;
 	}
 }
 
@@ -628,10 +687,6 @@ class FancyEnvActorCeiling : Actor
 		TNT1 A 0;
 		TNT1 A 0
 		{
-			// back to the dumb ways
-			if (ceilingpic == TexMan.CheckForTexture("F_SKY1", TexMan.Type_Any))
-				A_SpawnItem("FancySectorSky");
-
 			// Generic Ceiling Lights
 			string CeilingLights[] =
 			{

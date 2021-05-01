@@ -19,7 +19,7 @@ class FancySectorSky : FancyWorldBase
 			TNT1 A 0;
 			TNT1 A 0 A_CheckRange(2048,"Waiter",1);
 		Idle:
-			TNT1 A 0 A_PlaySound("world/fsky", CHAN_BODY, volumecvar.GetFloat(), 1);
+			TNT1 A 0 A_StartSound("world/fsky", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(),	0.25);
 			APLS A 72;
 			goto Spawn;
 		Waiter:
