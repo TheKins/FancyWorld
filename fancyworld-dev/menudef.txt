@@ -2,6 +2,10 @@ AddOptionMenu "OptionsMenu" {
 	Submenu "Fancy World Options", "FancyWorld_Options"
 }
 
+AddOptionMenu "OptionsMenuSimple" {
+	Submenu "Fancy World Options", "FancyWorld_Options"
+}
+
 OptionMenu "FancyWorld_Options" {
 	Title "Fancy World Options"
 	Slider "Volume Adjust","fw_volumefactor", 0, 8, 0.05, 2
