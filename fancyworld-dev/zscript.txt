@@ -99,6 +99,8 @@ Class SpawnEnvActorHandler : EventHandler
 
 		Vector2 spam2 = (spamx, spamy);
 		Vector3 spam3 = (spamx, spamy, spamz);
+		
+		int skipsky = 0;
 
 		while (spamy > -32448)
 		{
@@ -108,8 +110,10 @@ Class SpawnEnvActorHandler : EventHandler
 				if (level.IsPointInMap(spam3))
 				{
 					Actor.Spawn("FancyEnvActorSky", (spamx, spamy, spamz));
+					spamx += 1024;
+				} else {
+					spamx += 256;
 				}
-				spamx += 1024;
 				spam3 = (spamx, spamy, spamz);
 			}
 			spamx = -32448;
