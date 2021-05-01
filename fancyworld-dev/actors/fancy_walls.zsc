@@ -291,3 +291,24 @@ class FancyWallStatic : FancyWorldBase
 			loop;
 	}
 }
+
+// Fan
+class FancyWallFan : FancyWorldBase
+{
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallFan", 16, CPXF_NOZ))
+				{
+					Destroy();
+				}
+			}
+			TNT1 A 0 A_StartSound("world/fan", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
+			APLS A -1;
+			loop;
+	}
+}

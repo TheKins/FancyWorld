@@ -162,3 +162,6 @@ $random world/static 	{ world/static1 world/static2 }
 world/static1			static1
 world/static2			static2
 $volume world/static 0.05
+
+// obsidian fans
+world/fan				fan1

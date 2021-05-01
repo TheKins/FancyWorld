@@ -199,7 +199,9 @@ Class SpawnEnvActorHandler : EventHandler
 					"SFALL1",
 					"SFALL2",
 					"SFALL3",
-					"SFALL4"
+					"SFALL4",
+					// OBSIDIAN
+					"GREEN02"
 				};
 
 				for (int i = 0; i < WallSlimefall.Size(); i++)
@@ -288,7 +290,13 @@ Class SpawnEnvActorHandler : EventHandler
 					"COMPSTA4",
 					"COMPSTA5",
 					"COMPSTA6",
-					"COMPTALR"
+					"COMPTALR",
+					// OBSIDIAN
+					"COMPSTA7",
+					"COMPSTA8",
+					"COMPSTA9",
+					"COMPSTAA",
+					"COMPSTAB"
 				};
 
 				for (int i = 0; i < WallCompstation.Size(); i++)
@@ -406,7 +414,20 @@ Class SpawnEnvActorHandler : EventHandler
 					"COMPFUZ1",
 					"COMPFUZ2",
 					"COMPFUZ3",
-					"COMPFUZ4"
+					"COMPFUZ4",
+					// Console/OBSIDIAN
+					"TVSNOW01",
+					"TVSNOW02",
+					"TVSNOW03",
+					// OBSIDIAN, may move to own sound later
+					"DECMP04A",
+					"DECMP04B",
+					"DECMP04C",
+					"DECMP04D",
+					"DECMP04E",
+					"DECMP04F",
+					"DECMP04G",
+					"DECMP04H"
 				};
 
 				for (int i = 0; i < WallStatic.Size(); i++)
@@ -417,6 +438,25 @@ Class SpawnEnvActorHandler : EventHandler
 					Actor.Spawn("FancyWallStatic", (spawnCoords,(spamc - (spamf * 0.5))));
 					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.bottom) == TexMan.CheckForTexture(WallStatic[i], TexMan.Type_Any))
 					Actor.Spawn("FancyWallStatic", (spawnCoords,spamf));
+				}
+				
+				// Fans from Obsidian
+				string WallFan[] =
+				{
+					"DFAN1",
+					"DFAN2",
+					"DFAN3",
+					"DFAN4"
+				};
+
+				for (int i = 0; i < WallFan.Size(); i++)
+				{
+					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.top) == TexMan.CheckForTexture(WallFan[i], TexMan.Type_Any))
+					Actor.Spawn("FancyWallFan", (spawnCoords,(spamc - 32)));
+					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.mid) == TexMan.CheckForTexture(WallFan[i], TexMan.Type_Any))
+					Actor.Spawn("FancyWallFan", (spawnCoords,(spamc - (spamf * 0.5))));
+					if (l.sidedef[ii] && l.sidedef[ii].GetTexture(Side.bottom) == TexMan.CheckForTexture(WallFan[i], TexMan.Type_Any))
+					Actor.Spawn("FancyWallFan", (spawnCoords,spamf));
 				}
 
 				// One-Offs
@@ -493,19 +533,22 @@ class FancyEnvActorFloor : Actor
 			// Slime
 			string FloorSlime[] =
 			{
-			FloorSlime[0] = "SLIME01",
-			FloorSlime[1] = "SLIME02",
-			FloorSlime[2] = "SLIME03",
-			FloorSlime[3] = "SLIME04",
-			FloorSlime[4] = "SLIME05",
-			FloorSlime[5] = "SLIME06",
-			FloorSlime[6] = "SLIME07",
-			FloorSlime[7] = "SLIME08",
-			// OBSIDIAN black oil sludge
-			FloorSlime[8] = "SLUDGE01",
-			FloorSlime[9] = "SLUDGE02",
-			FloorSlime[10] = "SLUDGE03",
-			FloorSlime[11] = "SLUDGE04"
+				"SLIME01",
+				"SLIME02",
+				"SLIME03",
+				"SLIME04",
+				"SLIME05",
+				"SLIME06",
+				"SLIME07",
+				"SLIME08",
+				// OBSIDIAN black oil sludge
+				"SLUDGE01",
+				"SLUDGE02",
+				"SLUDGE03",
+				"SLUDGE04",
+				// OBSIDIAN Sludge
+				"OSLIME01",
+				"OSLIME02"
 			};
 
 			for (int i = 0; i < FloorSlime.Size(); i++)
@@ -632,6 +675,21 @@ class FancyEnvActorFloorOldWay : Actor
 			{
 				if (floorpic == TexMan.CheckForTexture(FloorTeleporter[i], TexMan.Type_Any))
 					A_SpawnItem("FancySectorTeleporterCore");
+			}
+			
+			// Fans from OBSIDIAN
+			string FloorXWater[] =
+			{
+				"FAN1",
+				"FAN2",
+				"FAN3",
+				"FAN4"
+			};
+
+			for (int i = 0; i < FloorXWater.Size(); i++)
+			{
+				if (floorpic == TexMan.CheckForTexture(FloorXWater[i], TexMan.Type_Any))
+					A_SpawnItem("FancySectorFan");
 			}
 		}
 		Stop;
