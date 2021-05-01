@@ -1,0 +1,10 @@
+class FancyWorldBase : Actor {
+	transient cvar volumecvar;
+
+	override void Tick() {
+		if(!volumecvar) {
+			volumecvar = cvar.getcvar("fw_volumefactor", players[consoleplayer]);
+		}
+		super.Tick();
+	}
+}

@@ -1,0 +1,489 @@
+// Test Actor
+class FancyWallTestSound : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallTestSound", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/test", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Plutonia Waterfalls
+class FancyWallWaterfall : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallWaterfall", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/waterfall", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Bloodfalls
+class FancyWallBloodfall : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallBloodfall", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/bloodfall", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Doom 2 Slimefalls
+class FancyWallSlimefall : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallSlimefall", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/slimefall", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// ObAddon (and prob. others) Lavafalls
+class FancyWallLavafall : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallLavafall", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/lavafall", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Doom 1 slime dripping out of a drain
+class FancyWallSlimedrip : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallSlimedrip", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/slimedrip", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Gargoyle-head blood fountain
+class FancyWallGargfont : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallGargfont", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/slimedrip", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// COMPSTA Wall Computers
+class FancyWallCompstation : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallCompstation", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/compstation", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Flaming Walls
+class FancyWallFirewall : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallFirewall", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/firewall", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// The Battler-Prince
+class FancyWallFireblu : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallFireblu", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/fireblu", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Creepy Faces on the Wall
+class FancyWallFaces : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallFaces", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/faces", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Tech Humming
+class FancyWallTechhum : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallTechhum", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/techhum", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Lights on the Wall
+class FancyWallLights : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallLights", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/walllight", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
+
+// Static Monitor
+class FancyWallStatic : FancyWorldBase
+{
+	Default
+	{
+		-SOLID
+		-NOCLIP
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOINTERACTION
+		+MOVEWITHSECTOR
+		radius 1;
+		height 1;
+		RenderStyle "None";
+	}
+	states
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetTics(random(1,8));
+			TNT1 A 0
+			{
+				if (CountProximity ("FancyWallStatic", 16, CPXF_NOZ))
+				{
+					return ResolveState("Null");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			TNT1 A 0 A_PlaySound("world/static", CHAN_BODY, volumecvar.GetFloat(), 1);
+			APLS A -1;
+			loop;
+	}
+}
