@@ -215,7 +215,7 @@ Class SpawnEnvActorHandler : EventHandler
 				// Lavafalls
 				string WallLavafall[] =
 				{
-					// ObAddon Lavafall. Probably other lavafalls, too...
+					// OBSIDIAN Lavafall. Probably other lavafalls, too...
 					"LFALL1",
 					"LFALL2",
 					"LFALL3",
@@ -400,7 +400,7 @@ Class SpawnEnvActorHandler : EventHandler
 					Actor.Spawn("FancyWallLights", (spawnCoords,spamf));
 				}
 
-				// CCTEX4/ObAddon Static Monitor
+				// CCTEX4/OBSIDIAN Static Monitor
 				string WallStatic[] =
 				{
 					"COMPFUZ1",
@@ -501,7 +501,7 @@ class FancyEnvActorFloor : Actor
 			FloorSlime[5] = "SLIME06",
 			FloorSlime[6] = "SLIME07",
 			FloorSlime[7] = "SLIME08",
-			// ObAddon black oil sludge
+			// OBSIDIAN black oil sludge
 			FloorSlime[8] = "SLUDGE01",
 			FloorSlime[9] = "SLUDGE02",
 			FloorSlime[10] = "SLUDGE03",
@@ -521,7 +521,7 @@ class FancyEnvActorFloor : Actor
 				"LAVA2",
 				"LAVA3",
 				"LAVA4",
-				// ObAddon Quake Lava
+				// OBSIDIAN Quake Lava
 				"QLAVA1",
 				"QLAVA2",
 				"QLAVA3",
@@ -571,7 +571,7 @@ class FancyEnvActorFloor : Actor
 					A_SpawnItem("FancySectorHotCore");
 			}
 
-			// XWATER from ObAddon
+			// XWATER from OBSIDIAN
 			string FloorXWater[] =
 			{
 				"XWATER1",
