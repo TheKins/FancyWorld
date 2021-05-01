@@ -10,9 +10,7 @@ class FancyWallTestSound : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallTestSound", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/test", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -33,9 +31,7 @@ class FancyWallWaterfall : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallWaterfall", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/waterfall", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -56,9 +52,7 @@ class FancyWallBloodfall : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallBloodfall", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/bloodfall", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -79,9 +73,7 @@ class FancyWallSlimefall : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallSlimefall", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/slimefall", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -102,9 +94,7 @@ class FancyWallLavafall : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallLavafall", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/lavafall", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -125,9 +115,7 @@ class FancyWallSlimedrip : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallSlimedrip", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/slimedrip", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -148,9 +136,7 @@ class FancyWallGargfont : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallGargfont", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/slimedrip", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -171,9 +157,7 @@ class FancyWallCompstation : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallCompstation", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/compstation", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -194,9 +178,7 @@ class FancyWallFirewall : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallFirewall", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/firewall", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -217,9 +199,7 @@ class FancyWallFireblu : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallFireblu", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/fireblu", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -240,9 +220,7 @@ class FancyWallFaces : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallFaces", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/faces", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -263,9 +241,7 @@ class FancyWallTechhum : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallTechhum", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/techhum", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -286,9 +262,7 @@ class FancyWallLights : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallLights", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/walllight", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
@@ -309,9 +283,7 @@ class FancyWallStatic : FancyWorldBase
 			{
 				if (CountProximity ("FancyWallStatic", 16, CPXF_NOZ))
 				{
-					return ResolveState("Null");
-				} else {
-					return ResolveState(null);
+					Destroy();
 				}
 			}
 			TNT1 A 0 A_StartSound("world/static", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
