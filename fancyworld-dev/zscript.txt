@@ -12,11 +12,11 @@ Class SpawnEnvActorHandler : EventHandler
 	override void WorldLoaded(WorldEvent e)
 	{
 		SpawnFloorActors();
-		SpawnFloorActors_OldWay();
-		SpawnCeilingActors();
-		SpawnSkyActors();
-		SpawnWallActors();
-		ChangeSoundSequences();
+		//SpawnFloorActors_OldWay();
+		//SpawnCeilingActors();
+		//SpawnSkyActors();
+		//SpawnWallActors();
+		//ChangeSoundSequences();
 	}
 	
 	void ChangeSoundSequences()
@@ -109,7 +109,29 @@ Class SpawnEnvActorHandler : EventHandler
 	// Thanks to Gutawer, PhantomBeta and _Bryan for helping debug this!
 	void SpawnFloorActors()
     {
-        //32704
+        string FloorTex[] =
+		{
+			"NUKAGE1", "NUKAGE2", "NUKAGE3", "NUKAGE4", 
+			"FWATER1", "FWATER2", "FWATER3", "FWATER4", "PURW1", "PURW2", 
+			"SLIME01", "SLIME02", "SLIME03", "SLIME04", "SLIME05", "SLIME06", "SLIME07", "SLIME08", "SLUDGE01", "SLUDGE02", "SLUDGE03", "SLUDGE04", "OSLIME01", "OSLIME02", 
+			"LAVA1", "LAVA2", "LAVA3", "LAVA4", "QLAVA1", "QLAVA2", "QLAVA3", "QLAVA4", "MAGMA1", "MAGMA2", "MAGMA3", "MAGMA4", "XLAV1", "XLAV2", 
+			"BLOOD1", "BLOOD2", "BLOOD3", "BLOOD4", 
+			"SLIME09", "SLIME10", "SLIME11", "SLIME12", 
+			"XWATER1", "XWATER2", "XWATER3", "XWATER4"
+		};
+
+		string FloorFX[] =
+		{
+			"Nukage", "Nukage", "Nukage", "Nukage", 
+			"Water", "Water", "Water", "Water", "Water", "Water", 
+			"Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", "Slime", 
+			"Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", "Lava", 
+			"Blood", "Blood", "Blood", "Blood", 
+			"Hot", "Hot", "Hot", "Hot", 
+			"XWater", "XWater", "XWater", "XWater"
+		};
+		
+		//32704
 		int spamx = -32448;
 		int spamy = 32448;
 		int spamz = 0;
@@ -124,7 +146,30 @@ Class SpawnEnvActorHandler : EventHandler
 				spamz = Sector.pointInSector((spamx, spamy)).floorplane.zAtPoint((spamx, spamy));
 				if (level.IsPointInMap(spam3))
 				{
-					Actor.Spawn("FancyEnvActorFloor", (spamx, spamy, spamz));
+					//Actor.Spawn("FancyEnvActorFloor", (spamx, spamy, spamz));
+					
+					string floorpic;
+					floorpic = TexMan.GetName(Sector.pointInSector((spamx, spamy)).getTexture(Sector.floor));
+					
+					for (int i = 0; i < FloorTex.Size(); i++)
+					{
+						if (floorpic == FloorTex[i])
+						{
+							string actname;
+							actname = String.Format("FancySector%s", FloorFX[i]);
+							
+							BlockThingsIterator it = BlockThingsIterator.CreateFromPos(spamx, spamy, spamz, spamz, 256, 0);
+							while (it.Next())
+							{
+								Actor mo = it.thing;
+								
+								if (!(mo is "FancyWorldBase"))
+								{
+									Actor.Spawn(actname, (spamx, spamy, spamz));
+								}
+							}
+						}
+					}
 				}
 				spamx += 128;
 				spam3 = (spamx, spamy, spamz);
@@ -589,180 +634,6 @@ Class SpawnEnvActorHandler : EventHandler
 				Actor.Spawn("FancyWallFaces", (spawnCoords,spamf));
 			}
 		}
-	}
-}
-
-class FancyEnvActorFloor : Actor
-{
-	Default
-	{
-		-SOLID
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOCLIP
-		+NOBLOCKMAP
-		RenderStyle "None";
-		radius 1;
-		height 1;
-	}
-
-	States
-	{
-	Spawn:
-		TNT1 A 0;
-		TNT1 A 0
-		{
-			// this is marginally less dumb than last time
-
-			// Nukage
-			string FloorNukage[] =
-			{					
-				"NUKAGE1",
-				"NUKAGE2",
-				"NUKAGE3",
-				"NUKAGE4"
-			};
-
-			for (int i = 0; i < FloorNukage.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorNukage[i], TexMan.Type_Any))
-				{
-					if (!CountProximity ("FancySectorNukageCore", 256))
-					{
-						A_SpawnItem("FancySectorNukageCore");
-					}
-					A_SpawnItem("FancySectorNukage");
-				}
-			}
-
-			// Water
-			string FloorWater[] =
-			{
-				"FWATER1",
-				"FWATER2",
-				"FWATER3",
-				"FWATER4",
-				// OBSIDIAN Purple water - maybe move later
-				"PURW1",
-				"PURW2"
-			};
-
-			for (int i = 0; i < FloorWater.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorWater[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorWaterCore");
-			}
-
-			// Slime
-			string FloorSlime[] =
-			{
-				"SLIME01",
-				"SLIME02",
-				"SLIME03",
-				"SLIME04",
-				"SLIME05",
-				"SLIME06",
-				"SLIME07",
-				"SLIME08",
-				// OBSIDIAN black oil sludge
-				"SLUDGE01",
-				"SLUDGE02",
-				"SLUDGE03",
-				"SLUDGE04",
-				// OBSIDIAN Sludge
-				"OSLIME01",
-				"OSLIME02"
-			};
-
-			for (int i = 0; i < FloorSlime.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorSlime[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorSlimeCore");
-			}
-
-			// Lava
-			string FloorLava[] =
-			{
-				"LAVA1",
-				"LAVA2",
-				"LAVA3",
-				"LAVA4",
-				// OBSIDIAN Quake Lava
-				"QLAVA1",
-				"QLAVA2",
-				"QLAVA3",
-				"QLAVA4",
-				// Other OBSIDIAN Lava shit
-				"MAGMA1",
-				"MAGMA2",
-				"MAGMA3",
-				"MAGMA4",
-				"XLAV1",
-				"XLAV2"
-			};
-
-			for (int i = 0; i < FloorLava.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorLava[i], TexMan.Type_Any))
-				{
-
-					if (!CountProximity ("FancySectorLavaCore", 256))
-					{
-						A_SpawnItem("FancySectorLavaCore");
-					}
-					A_SpawnItem("FancySectorLava");
-				}
-			}
-
-			// Blood
-			string FloorBlood[] =
-			{
-				"BLOOD1",
-				"BLOOD2",
-				"BLOOD3",
-				"BLOOD4"
-			};
-
-			for (int i = 0; i < FloorBlood.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorBlood[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorSlimeCore");
-			}
-
-			// Hot
-			string FloorHot[] =
-			{
-				"SLIME09",
-				"SLIME10",
-				"SLIME11",
-				"SLIME12"
-			};
-
-			for (int i = 0; i < FloorHot.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorHot[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorHotCore");
-			}
-
-			// XWATER from OBSIDIAN
-			string FloorXWater[] =
-			{
-				"XWATER1",
-				"XWATER2",
-				"XWATER3",
-				"XWATER4"
-			};
-
-			for (int i = 0; i < FloorXWater.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorXWater[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorXWaterCore");
-			}
-		}
-		Stop;
-	Remove:
-		TNT1 A 0;
-		stop;
 	}
 }
 

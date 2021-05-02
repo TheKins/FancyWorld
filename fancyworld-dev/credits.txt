@@ -3,6 +3,7 @@ Id Software (...for everything.)
 Gutawer (Much ZScript help!)
 PhantomBeta (further ZScript babying)
 Caligari87 (Volume support)
+Mordeth (Suggestions)
 
 Nintendo (Slime bubble sprites)
 Epic Games (Slime sounds, Computer sounds)

@@ -1,5 +1,5 @@
 // Acid/Nukage
-class FancySectorNukageCore : FancyWorldBase
+class FancySectorNukage : FancyWorldBase
 {
 	states
 	{
@@ -12,9 +12,16 @@ class FancySectorNukageCore : FancyWorldBase
 			goto Spawn;
 		
 	}
+	
+	override void BeginPlay()
+	{
+		A_SpawnItem("FancySectorNukageBlobs");
+		
+		Super.BeginPlay();
+	}
 }
 
-class FancySectorNukage : FancyWorldBase
+class FancySectorNukageBlobs : FancyWorldBase
 {
 	Default
 	{
@@ -54,7 +61,7 @@ class FancySectorNukage : FancyWorldBase
 }
 
 // Water
-class FancySectorWaterCore : FancyWorldBase
+class FancySectorWater : FancyWorldBase
 {
 	states
 	{
@@ -70,7 +77,7 @@ class FancySectorWaterCore : FancyWorldBase
 }
 
 // Slime
-class FancySectorSlimeCore : FancyWorldBase
+class FancySectorSlime : FancyWorldBase
 {
 	states
 	{
@@ -86,7 +93,7 @@ class FancySectorSlimeCore : FancyWorldBase
 }
 
 // Lava
-class FancySectorLavaCore : FancyWorldBase
+class FancySectorLava : FancyWorldBase
 {
 	states
 	{
@@ -97,11 +104,17 @@ class FancySectorLavaCore : FancyWorldBase
 			TNT1 A 0 A_StartSound("world/lavaflow", CHAN_BODY, CHANF_LOOPING|CHANF_LISTENERZ,volumecvar.GetFloat(), ATTN_NORM, frandom(0.98,1.02), frandom(0.0, 1.0));
 			TNT1 A 72;
 			goto Spawn;
+	}
+	
+	override void BeginPlay()
+	{
+		A_SpawnItem("FancySectorLavaBlobs");
 		
+		Super.BeginPlay();
 	}
 }
 
-class FancySectorLava : FancyWorldBase
+class FancySectorLavaBlobs : FancyWorldBase
 {
 	Default
 	{
@@ -148,7 +161,7 @@ class FancySectorLava : FancyWorldBase
 }
 
 // Hot Surfaces
-class FancySectorHotCore : FancyWorldBase
+class FancySectorHot : FancyWorldBase
 {
 	states
 	{
@@ -175,7 +188,7 @@ class FancySectorHotCore : FancyWorldBase
 }
 
 // XWater from ObAddon
-class FancySectorXWaterCore : FancyWorldBase
+class FancySectorXWater : FancyWorldBase
 {
 	states
 	{
