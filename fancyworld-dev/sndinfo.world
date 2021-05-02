@@ -176,3 +176,5 @@ world/doors/wood/bclose		wdbcls
 
 // metal
 world/plats/metal		platmtl
+world/plats/water		platwtr
+world/plats/water/end	pladwtr

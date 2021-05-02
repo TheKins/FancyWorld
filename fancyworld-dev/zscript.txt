@@ -604,72 +604,69 @@ Class SpawnEnvActorHandler : EventHandler
 	// Apply per-texture SoundSequences to moving actors. This is an experimental fucking mess.
 	void ChangeSoundSequences()
 	{
-		/*
-		string FloorWater[] =
+		string TopTex[] =
 		{
-			"FWATER1",
-			"FWATER2",
-			"FWATER3",
-			"FWATER4",
-			// OBSIDIAN Purple water - maybe move later
-			"PURW1",
-			"PURW2"
+			"BIGDOOR5", "BIGDOOR6", "BIGDOOR7",
+			"METAL2", "METAL3", "METAL4", "METAL5", "METAL6", "METAL7"
 		};
-		
-		for (int i = 0; i < level.Sectors.Size(); i++)
+
+		string TopFX[] =
 		{
-			for (int j = 0; j < FloorWater.Size(); j++)
-			{
-				if (level.Sectors[i].getTexture(Sector.floor) == TexMan.CheckForTexture(FloorWater[j], TexMan.Type_Any))
-				{
-					level.Sectors[i].seqname = "Platform";
-				}
-			}
-		}
-		
-		*/
-		
-		string DoorWood[] =
-		{
-			"BIGDOOR5",
-			"BIGDOOR6",
-			"BIGDOOR7"
+			"FancyDoorWood", "FancyDoorWood", "FancyDoorWood",
+			"FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal"
 		};
-		
-		string PlatMetal[] =
+
+		string BottomTex[] =
 		{
-			"METAL2",
-			"METAL3",
-			"METAL4",
-			"METAL5",
-			"METAL6",
-			"METAL7"
+			"METAL2", "METAL3", "METAL4", "METAL5", "METAL6", "METAL7"
+		};
+
+		string BottomFX[] =
+		{
+			"FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal", "FancyPlatMetal"
 		};
 		
 		for (int k = 0; k < level.Lines.Size(); k++)
 		{
 			Line l = level.Lines[k];
 			
-			// Wooden Doors
-			for (int j = 0; j < DoorWood.Size(); j++)
+			// Top Linedef Textures
+			for (int j = 0; j < TopTex.Size(); j++)
 			{
-				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.top) == TexMan.CheckForTexture(DoorWood[j], TexMan.Type_Any))
+				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.top) == TexMan.CheckForTexture(TopTex[j], TexMan.Type_Any))
 				{
-					l.BackSector.seqname = "FancyDoorWood";
+					l.BackSector.seqname = TopFX[j];
 				}
 			}
 			
-			// Metal Plats
-			for (int j = 0; j < PlatMetal.Size(); j++)
+			// Bottom Linedef Textures
+			for (int j = 0; j < BottomTex.Size(); j++)
 			{
-				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.top) == TexMan.CheckForTexture(PlatMetal[j], TexMan.Type_Any))
+				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.bottom) == TexMan.CheckForTexture(BottomTex[j], TexMan.Type_Any))
 				{
-					l.BackSector.seqname = "FancyPlatMetal";
+					l.BackSector.seqname = BottomFX[j];
 				}
-				
-				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.bottom) == TexMan.CheckForTexture(PlatMetal[j], TexMan.Type_Any))
+			}
+		}
+		
+		// Floor texture based changes. Putting this last so it can override changes from the previous steps:
+		string FloorTex[] =
+		{
+			"FWATER1", "FWATER2", "FWATER3", "FWATER4", "PURW1", "PURW2"
+		};
+		
+		string FloorFX[] =
+		{
+			"FancyPlatWater", "FancyPlatWater", "FancyPlatWater", "FancyPlatWater", "FancyPlatWater", "FancyPlatWater"
+		};
+		
+		for (int i = 0; i < level.Sectors.Size(); i++)
+		{
+			for (int j = 0; j < FloorTex.Size(); j++)
+			{
+				if (level.Sectors[i].getTexture(Sector.floor) == TexMan.CheckForTexture(FloorTex[j], TexMan.Type_Any))
 				{
-					l.BackSector.seqname = "FancyPlatMetal";
+					level.Sectors[i].seqname = FloorFX[j];
 				}
 			}
 		}

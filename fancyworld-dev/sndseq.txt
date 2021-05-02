@@ -29,3 +29,8 @@ end
 	playrepeat	world/plats/metal
 	stopsound	plats/pt1_stop
 end
+
+:FancyPlatWater
+	playrepeat   world/plats/water
+	stopsound	world/plats/water/end
+end
