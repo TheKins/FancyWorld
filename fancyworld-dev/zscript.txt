@@ -666,7 +666,11 @@ Class SpawnEnvActorHandler : EventHandler
 			{
 				if (level.Sectors[i].getTexture(Sector.floor) == TexMan.CheckForTexture(FloorTex[j], TexMan.Type_Any))
 				{
-					level.Sectors[i].seqname = FloorFX[j];
+					if (level.Sectors[i].floorplane.ZAtPoint(level.Sectors[i].centerspot)
+					!= level.Sectors[i].ceilingplane.ZAtPoint(level.Sectors[i].centerspot))
+					{
+						level.Sectors[i].seqname = FloorFX[j];
+					}
 				}
 			}
 		}
