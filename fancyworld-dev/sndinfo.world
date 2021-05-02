@@ -165,3 +165,14 @@ $volume world/static 0.05
 
 // obsidian fans
 world/fan				fan1
+
+// == DOORS ==
+world/doors/wood/open		wdopn
+world/doors/wood/close		wdcls
+world/doors/wood/bopen		wdbopn
+world/doors/wood/bclose		wdbcls
+
+// == PLATS ==
+
+// metal
+world/plats/metal		platmtl

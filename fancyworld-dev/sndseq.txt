@@ -1,0 +1,31 @@
+[FancyDoorWood
+	0		FancyDoorOpenWood
+	1		FancyDoorCloseWood
+	2		FancyDoorOpenBlazingWood
+	3		FancyDoorCloseBlazingWood
+]
+
+:FancyDoorOpenWood
+	play		world/doors/wood/open
+	nostopcutoff
+end
+
+:FancyDoorCloseWood
+	play		world/doors/wood/close
+	nostopcutoff
+end
+
+:FancyDoorOpenBlazingWood
+	play		world/doors/wood/bopen
+	nostopcutoff
+end
+
+:FancyDoorCloseBlazingWood
+	play		world/doors/wood/bclose
+	nostopcutoff
+end
+
+:FancyPlatMetal
+	playrepeat	world/plats/metal
+	stopsound	plats/pt1_stop
+end

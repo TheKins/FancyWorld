@@ -16,6 +16,80 @@ Class SpawnEnvActorHandler : EventHandler
 		SpawnCeilingActors();
 		SpawnSkyActors();
 		SpawnWallActors();
+		ChangeSoundSequences();
+	}
+	
+	void ChangeSoundSequences()
+	{
+		/*
+		string FloorWater[] =
+		{
+			"FWATER1",
+			"FWATER2",
+			"FWATER3",
+			"FWATER4",
+			// OBSIDIAN Purple water - maybe move later
+			"PURW1",
+			"PURW2"
+		};
+		
+		for (int i = 0; i < level.Sectors.Size(); i++)
+		{
+			for (int j = 0; j < FloorWater.Size(); j++)
+			{
+				if (level.Sectors[i].getTexture(Sector.floor) == TexMan.CheckForTexture(FloorWater[j], TexMan.Type_Any))
+				{
+					level.Sectors[i].seqname = "Platform";
+				}
+			}
+		}
+		
+		*/
+		
+		string DoorWood[] =
+		{
+			"BIGDOOR5",
+			"BIGDOOR6",
+			"BIGDOOR7"
+		};
+		
+		string PlatMetal[] =
+		{
+			"METAL2",
+			"METAL3",
+			"METAL4",
+			"METAL5",
+			"METAL6",
+			"METAL7"
+		};
+		
+		for (int k = 0; k < level.Lines.Size(); k++)
+		{
+			Line l = level.Lines[k];
+			
+			// Wooden Doors
+			for (int j = 0; j < DoorWood.Size(); j++)
+			{
+				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.top) == TexMan.CheckForTexture(DoorWood[j], TexMan.Type_Any))
+				{
+					l.BackSector.seqname = "FancyDoorWood";
+				}
+			}
+			
+			// Metal Plats
+			for (int j = 0; j < PlatMetal.Size(); j++)
+			{
+				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.top) == TexMan.CheckForTexture(PlatMetal[j], TexMan.Type_Any))
+				{
+					l.BackSector.seqname = "FancyPlatMetal";
+				}
+				
+				if (l.flags & line.ML_TWOSIDED && l.sidedef[0] && l.sidedef[0].GetTexture(Side.bottom) == TexMan.CheckForTexture(PlatMetal[j], TexMan.Type_Any))
+				{
+					l.BackSector.seqname = "FancyPlatMetal";
+				}
+			}
+		}
 	}
 
 	// Spawn stuff on the floor the "old way" (in the center of every sector,
