@@ -220,7 +220,7 @@ class FancySectorXWater : FancyWorldBase
 }
 
 // Floor Teleporter
-class FancySectorTeleporterCore : FancyWorldBase
+class FancySectorTeleporter : FancyWorldBase
 {
 	states
 	{

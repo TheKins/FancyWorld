@@ -19,19 +19,6 @@ Class SpawnEnvActorHandler : EventHandler
 		ChangeSoundSequences();
 	}
 	
-	// Spawn stuff on the floor the "old way" (in the center of every sector,
-	// regardless of whether that center is actually in the sector or not.
-	// only useful for things that are very likely gonna be a square.
-	// Devised by Gutawer!
-	void SpawnFloorActors_OldWay()
-	{
-		for (int i = 0; i < level.Sectors.Size(); i++)
-		{
-			let c = level.Sectors[i].centerspot;
-			Actor.Spawn("FancyEnvActorFloorOldWay", (c.x, c.y, level.Sectors[i].floorplane.ZAtPoint(c)));
-		}
-	}
-
 	// Spawn Stuff on the floor in a "grid" across all playable map space.
 	// Thanks to Gutawer, PhantomBeta and _Bryan for helping debug this!
 	void SpawnFloorActors()
@@ -115,6 +102,47 @@ Class SpawnEnvActorHandler : EventHandler
 			spamy -= 128;
 		}
     }
+	
+	// Spawn stuff on the floor the "old way" (in the center of every sector,
+	// regardless of whether that center is actually in the sector or not.
+	// only useful for things that are very likely gonna be a square.
+	// Devised by Gutawer!
+	void SpawnFloorActors_OldWay()
+	{
+		string FloorTex[] =
+		{
+			"GATE1", "GATE2", "GATE3", "GATE4", "GATE3TN", "GATE4BL", "GATE4GN", "GATE4OR", "GATE4RD", "GATE4YL",
+			"FAN1", "FAN2", "FAN3", "FAN4"
+		};
+
+		string FloorFX[] =
+		{
+			"Teleporter", "Teleporter", "Teleporter", "Teleporter", "Teleporter", "Teleporter", "Teleporter", "Teleporter", "Teleporter", "Teleporter",
+			"Fan", "Fan", "Fan", "Fan"
+		};
+		
+		for (int i = 0; i < level.Sectors.Size(); i++)
+		{
+			let c = level.Sectors[i].centerspot;
+			//Actor.Spawn("FancyEnvActorFloorOldWay", (c.x, c.y, level.Sectors[i].floorplane.ZAtPoint(c)));
+			
+			if (level.IsPointInMap((c.x, c.y, level.Sectors[i].floorplane.ZAtPoint(c))))
+			{
+				string floorpic;
+				floorpic = TexMan.GetName(level.Sectors[i].getTexture(Sector.floor));
+				
+				for (int i = 0; i < FloorTex.Size(); i++)
+				{
+					if (floorpic == FloorTex[i])
+					{
+						string actname;
+						actname = String.Format("FancySector%s", FloorFX[i]);
+						Actor.Spawn(actname, (c.x, c.y, level.Sectors[i].floorplane.ZAtPoint(c)));
+					}
+				}
+			}
+		}
+	}
 
 	// Spawn Stuff on the ceiling. Same method as with SpawnFloorActors.
 	void SpawnCeilingActors()
@@ -645,69 +673,6 @@ Class SpawnEnvActorHandler : EventHandler
 				}
 			}
 		}
-	}
-}
-
-class FancyEnvActorFloorOldWay : Actor
-{
-	Default
-	{
-		-SOLID
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOCLIP
-		+NOBLOCKMAP
-		RenderStyle "None";
-		radius 1;
-		height 1;
-	}
-
-	States
-	{
-	Spawn:
-		TNT1 A 0;
-		TNT1 A 0
-		{
-			// Floor Teleporter
-			string FloorTeleporter[] =
-			{
-				"GATE1",
-				"GATE2",
-				"GATE3",
-				"GATE4",
-				// CC4 Tex
-				"GATE3TN",
-				"GATE4BL",
-				"GATE4GN",
-				"GATE4OR",
-				"GATE4RD",
-				"GATE4YL"
-			};
-			for (int i = 0; i < FloorTeleporter.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorTeleporter[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorTeleporterCore");
-			}
-			
-			// Fans from OBSIDIAN
-			string FloorXWater[] =
-			{
-				"FAN1",
-				"FAN2",
-				"FAN3",
-				"FAN4"
-			};
-
-			for (int i = 0; i < FloorXWater.Size(); i++)
-			{
-				if (floorpic == TexMan.CheckForTexture(FloorXWater[i], TexMan.Type_Any))
-					A_SpawnItem("FancySectorFan");
-			}
-		}
-		Stop;
-	Remove:
-		TNT1 A 0;
-		stop;
 	}
 }
 
