@@ -65,6 +65,8 @@ Class SpawnEnvActorHandler : EventHandler
 
 		Vector2 spam2 = (spamx, spamy);
 		Vector3 spam3 = (spamx, spamy, spamz);
+		
+		bool nospawn;
 
 		while (spamy > -32448)
 		{
@@ -84,27 +86,29 @@ Class SpawnEnvActorHandler : EventHandler
 						{
 							string actname;
 							actname = String.Format("FancySector%s", FloorFX[i]);
-							Console.printf("%s", actname);
+							//Console.printf("%s", actname);
 							
-							Actor.Spawn(actname, (spamx, spamy, spamz));
-							
-							/*
-							BlockThingsIterator it = BlockThingsIterator.CreateFromPos(spamx, spamy, spamz, spamz, 64, 0);
+							BlockThingsIterator it = BlockThingsIterator.CreateFromPos(spamx, spamy, spamz, spamz, 128, 0);
 							while (it.Next())
 							{
 								Actor mo = it.thing;
 								
 								if (mo is "FancyWorldBase")
 								{
-								} else {
-									Actor.Spawn(actname, (spamx, spamy, spamz));
+									nospawn = true;
 								}
 							}
-							*/
+							
+							if (!nospawn)
+							{
+								Actor.Spawn(actname, (spamx, spamy, spamz));
+							}
+							
+							nospawn = false;
 						}
 					}
 				}
-				spamx += 128;
+				spamx += 64;
 				spam3 = (spamx, spamy, spamz);
 			}
 			spamx = -32448;
